@@ -1,15 +1,4 @@
-<!--ts-->
-   * [TensorFlow Lite for Microcontrollers](#tensorflow-lite-for-microcontrollers)
-   * [Build Status](#build-status)
-      * [Official Builds](#official-builds)
-      * [Community Supported Builds](#community-supported-builds)
-   * [Additional Documentation](#additional-documentation)
-
-<!-- Added by: advaitjain, at: Thu 29 Apr 2021 12:53:08 PM PDT -->
-
-<!--te-->
-
-# TensorFlow Lite for Microcontrollers
+# TensorFlow Lite for BL602
 
 The TFLM code is currently in the process of being refactored out of the
 [Tensorflow github
