@@ -16,6 +16,10 @@ COMPONENT_SRCDIRS := src
 # TensorFlow Makefile
 # Based on https://github.com/lupyuen/bl_iot_sdk/blob/tflite/customer_app/sdk_app_tflite/Makefile
 
+# root directory of tensorflow
+TENSORFLOW_ROOT :=
+MAKEFILE_DIR := ../../../../components/3rdparty/tflite-bl602/tensorflow/lite/micro/tools/make
+
 # For some invocations of the makefile, it is useful to avoid downloads. This
 # can be achieved by explicitly passing in DISABLE_DOWNLOADS=true on the command
 # line. Note that for target-specific downloads (e.g. CMSIS) there will need to
