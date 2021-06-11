@@ -5,7 +5,9 @@
 # Include Folders
 COMPONENT_ADD_INCLUDEDIRS := \
 	tensorflow/.. \
-	tensorflow/lite/micro/tools/make/downloads/flatbuffers/include
+	tensorflow/lite/micro/tools/make/downloads/flatbuffers/include \
+	tensorflow/lite/micro/tools/make/downloads/gemmlowp \
+	tensorflow/lite/micro/tools/make/downloads/ruy
 
 # Source Folders
 COMPONENT_SRCDIRS := \

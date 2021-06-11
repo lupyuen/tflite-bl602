@@ -5,7 +5,9 @@
 # Include Folders
 COMPONENT_ADD_INCLUDEDIRS := \
 	tensorflow/.. \
-	tensorflow/lite/micro/tools/make/downloads/flatbuffers/include
+	tensorflow/lite/micro/tools/make/downloads/flatbuffers/include \
+	tensorflow/lite/micro/tools/make/downloads/gemmlowp \
+	tensorflow/lite/micro/tools/make/downloads/ruy
 
 # Object Files (*.o)
 COMPONENT_OBJS := $(patsubst %.c,%.o, $(COMPONENT_SRCS))
@@ -57,3 +59,8 @@ ifneq ($(DISABLE_DOWNLOADS), true)
     $(error Something went wrong with the person detection int8 model download: $(RESULT))
   endif
 endif
+
+# Create rules for downloading third-party dependencies.
+THIRD_PARTY_TARGETS :=
+$(foreach DOWNLOAD,$(THIRD_PARTY_DOWNLOADS),$(eval $(call create_download_rule,$(DOWNLOAD))))
+third_party_downloads: $(THIRD_PARTY_TARGETS)
