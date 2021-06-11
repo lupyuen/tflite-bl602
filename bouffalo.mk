@@ -5,7 +5,7 @@
 # Include Folders
 COMPONENT_ADD_INCLUDEDIRS := \
 	tensorflow/.. \
-	third_party
+	tensorflow/lite/micro/tools/make/downloads/flatbuffers/include
 
 # Object Files (*.o)
 COMPONENT_OBJS := $(patsubst %.c,%.o, $(COMPONENT_SRCS))
@@ -17,7 +17,7 @@ COMPONENT_SRCDIRS := src
 # Based on https://github.com/lupyuen/bl_iot_sdk/blob/tflite/customer_app/sdk_app_tflite/Makefile
 
 # root directory of tensorflow
-TENSORFLOW_ROOT := $(BL60X_SDK_PATH)/components/3rdparty/tflite-bl602/tensorflow
+TENSORFLOW_ROOT := 
 MAKEFILE_DIR := $(BL60X_SDK_PATH)/components/3rdparty/tflite-bl602/tensorflow/lite/micro/tools/make
 
 # For some invocations of the makefile, it is useful to avoid downloads. This
