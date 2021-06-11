@@ -11,7 +11,10 @@ COMPONENT_ADD_INCLUDEDIRS := \
 COMPONENT_OBJS := $(patsubst %.c,%.o, $(COMPONENT_SRCS))
 
 # Source Folders
-COMPONENT_SRCDIRS := tensorflow/lite/micro
+COMPONENT_SRCDIRS := \
+	tensorflow/lite/core/api \
+	tensorflow/lite/micro \
+	tensorflow/lite/micro/kernels
 
 # TensorFlow Makefile
 # Based on https://github.com/lupyuen/bl_iot_sdk/blob/tflite/customer_app/sdk_app_tflite/Makefile
