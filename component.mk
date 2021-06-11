@@ -8,7 +8,7 @@ COMPONENT_ADD_INCLUDEDIRS := \
 	tensorflow/lite/micro/tools/make/downloads/flatbuffers/include
 
 # Source Folders
-COMPONENT_SRCDIRS := src
+COMPONENT_SRCDIRS := tensorflow/lite/micro
 
 # Check the submodule is initialised
 COMPONENT_SUBMODULES := 
