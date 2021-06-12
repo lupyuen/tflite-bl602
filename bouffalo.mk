@@ -4,21 +4,22 @@
 
 # Include Folders
 COMPONENT_ADD_INCLUDEDIRS := \
-	tensorflow/.. \
-	tensorflow/lite/micro/tools/make/downloads/flatbuffers/include \
-	tensorflow/lite/micro/tools/make/downloads/gemmlowp \
-	tensorflow/lite/micro/tools/make/downloads/ruy
+    tensorflow/.. \
+    tensorflow/lite/micro/tools/make/downloads/flatbuffers/include \
+    tensorflow/lite/micro/tools/make/downloads/gemmlowp \
+    tensorflow/lite/micro/tools/make/downloads/ruy
 
 # Object Files (*.o)
 COMPONENT_OBJS := $(patsubst %.c,%.o, $(COMPONENT_SRCS))
 
 # Source Folders
 COMPONENT_SRCDIRS := \
-  tensorflow/lite/c \
-	tensorflow/lite/core/api \
-	tensorflow/lite/kernels/internal \
-	tensorflow/lite/micro \
-	tensorflow/lite/micro/kernels
+    tensorflow/lite/c \
+    tensorflow/lite/core/api \
+    tensorflow/lite/kernels \
+    tensorflow/lite/kernels/internal \
+    tensorflow/lite/micro \
+    tensorflow/lite/micro/kernels
 
 # Define the GCC compiler options:
 # CFLAGS for C compiler, CPPFLAGS for C++ compiler
@@ -80,21 +81,22 @@ ifneq ($(DISABLE_DOWNLOADS), true)
     $(error Something went wrong with the person detection int8 model download: $(RESULT))
   endif
 
-	#### Added GEMMLOWP, RUY downloads
-	#### TODO: Use the download rules in helper_functions.inc
-	RESULT := $(shell $(MAKEFILE_DIR)/download_and_extract.sh $(GEMMLOWP_URL) $(GEMMLOWP_MD5) ${MAKEFILE_DIR}/downloads/gemmlowp)
-	#### TODO: Check results of download
+  #### Added GEMMLOWP, RUY downloads
+  #### TODO: Use the download rules in helper_functions.inc
+  RESULT := $(shell $(MAKEFILE_DIR)/download_and_extract.sh $(GEMMLOWP_URL) $(GEMMLOWP_MD5) ${MAKEFILE_DIR}/downloads/gemmlowp)
+  #### TODO: Check results of download
   # ifneq ($(RESULT), SUCCESS)
   #   $(error Something went wrong with the GEMMLOWP download: $(RESULT))
   # endif
-	RESULT := $(shell $(MAKEFILE_DIR)/download_and_extract.sh $(RUY_URL) $(RUY_MD5) ${MAKEFILE_DIR}/downloads/ruy)
-	#### TODO: Check results of download
+  RESULT := $(shell $(MAKEFILE_DIR)/download_and_extract.sh $(RUY_URL) $(RUY_MD5) ${MAKEFILE_DIR}/downloads/ruy)
+  #### TODO: Check results of download
   # ifneq ($(RESULT), SUCCESS)
   #   $(error Something went wrong with the RUY download: $(RESULT))
   # endif
 
 endif
 
+#### TODO: Fix third-party downloads
 # Create rules for downloading third-party dependencies.
 THIRD_PARTY_TARGETS :=
 $(foreach DOWNLOAD,$(THIRD_PARTY_DOWNLOADS),$(eval $(call create_download_rule,$(DOWNLOAD))))
