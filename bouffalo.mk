@@ -49,6 +49,7 @@ ifneq ($(DISABLE_DOWNLOADS), true)
     $(error Something went wrong with the pigweed download: $(DOWNLOAD_RESULT))
   endif
 
+  #### TODO: Fix third-party downloads
   include $(MAKEFILE_DIR)/third_party_downloads.inc
   THIRD_PARTY_DOWNLOADS :=
   $(eval $(call add_third_party_download,$(GEMMLOWP_URL),$(GEMMLOWP_MD5),gemmlowp,))
@@ -58,6 +59,15 @@ ifneq ($(DISABLE_DOWNLOADS), true)
   ifneq ($(RESULT), SUCCESS)
     $(error Something went wrong with the person detection int8 model download: $(RESULT))
   endif
+
+	#### Added GEMMLOWP download
+	#### TODO: Use the download rules in helper_functions.inc
+	RESULT := $(shell $(MAKEFILE_DIR)/download_and_extract.sh $(GEMMLOWP_URL) $(GEMMLOWP_MD5) ${MAKEFILE_DIR}/downloads/gemmlowp)
+	#### TODO: Check results of download
+  # ifneq ($(RESULT), SUCCESS)
+  #   $(error Something went wrong with the GEMMLOWP download: $(RESULT))
+  # endif
+
 endif
 
 # Create rules for downloading third-party dependencies.
