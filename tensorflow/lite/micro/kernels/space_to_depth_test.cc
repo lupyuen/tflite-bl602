@@ -1,3 +1,4 @@
+#ifdef NOTUSED  ////  TODO: Fix this file for BL602
 /* Copyright 2017 The TensorFlow Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -106,3 +107,4 @@ TEST(SpaceToDepthOpModel, Int64) {
 
 }  // namespace
 }  // namespace tflite
+#endif  //  NOTUSED
