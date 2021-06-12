@@ -22,9 +22,19 @@ COMPONENT_SRCDIRS := \
 # CFLAGS for C compiler, CPPFLAGS for C++ compiler
 
 # Use global C math functions instead of std library.
-# See components/3rdparty/tflite-bl602/tensorflow/lite/kernels/internal/cppmath.h
+# See tensorflow/lite/kernels/internal/cppmath.h
 CFLAGS   += -DTF_LITE_USE_GLOBAL_CMATH_FUNCTIONS
 CPPFLAGS += -DTF_LITE_USE_GLOBAL_CMATH_FUNCTIONS
+
+# Use std::min instead of std::fmin
+# See tensorflow/lite/kernels/internal/min.h
+CFLAGS   += -DTF_LITE_USE_GLOBAL_MIN
+CPPFLAGS += -DTF_LITE_USE_GLOBAL_MIN
+
+# Use std::max instead of std::fmax
+# See tensorflow/lite/kernels/internal/max.h
+CFLAGS   += -DTF_LITE_USE_GLOBAL_MAX
+CPPFLAGS += -DTF_LITE_USE_GLOBAL_MAX
 
 # TensorFlow Makefile
 # Based on https://github.com/lupyuen/bl_iot_sdk/blob/tflite/customer_app/sdk_app_tflite/Makefile
