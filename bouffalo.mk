@@ -68,12 +68,17 @@ ifneq ($(DISABLE_DOWNLOADS), true)
     $(error Something went wrong with the person detection int8 model download: $(RESULT))
   endif
 
-	#### Added GEMMLOWP download
+	#### Added GEMMLOWP, RUY downloads
 	#### TODO: Use the download rules in helper_functions.inc
 	RESULT := $(shell $(MAKEFILE_DIR)/download_and_extract.sh $(GEMMLOWP_URL) $(GEMMLOWP_MD5) ${MAKEFILE_DIR}/downloads/gemmlowp)
 	#### TODO: Check results of download
   # ifneq ($(RESULT), SUCCESS)
   #   $(error Something went wrong with the GEMMLOWP download: $(RESULT))
+  # endif
+	RESULT := $(shell $(MAKEFILE_DIR)/download_and_extract.sh $(RUY_URL) $(RUY_MD5) ${MAKEFILE_DIR}/downloads/ruy)
+	#### TODO: Check results of download
+  # ifneq ($(RESULT), SUCCESS)
+  #   $(error Something went wrong with the RUY download: $(RESULT))
   # endif
 
 endif
