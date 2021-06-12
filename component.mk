@@ -13,6 +13,7 @@ COMPONENT_ADD_INCLUDEDIRS := \
 COMPONENT_SRCDIRS := \
   	tensorflow/lite/c \
 	tensorflow/lite/core/api \
+	tensorflow/lite/kernels/internal \
 	tensorflow/lite/micro \
 	tensorflow/lite/micro/kernels
 
