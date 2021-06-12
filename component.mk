@@ -19,7 +19,7 @@ COMPONENT_SRCDIRS := \
     tensorflow/lite/kernels/internal \
     tensorflow/lite/micro \
     tensorflow/lite/micro/kernels \
-    tensorflow/lite/micro/memory_planner/greedy_memory_planner.cc \
+    tensorflow/lite/micro/memory_planner \
     tensorflow/lite/schema/schema_utils.cc
 
 # Check the submodule is initialised
