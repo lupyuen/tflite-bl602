@@ -43,6 +43,11 @@ CPPFLAGS += -DTF_LITE_USE_GLOBAL_MIN
 CFLAGS   += -DTF_LITE_USE_GLOBAL_MAX
 CPPFLAGS += -DTF_LITE_USE_GLOBAL_MAX
 
+# Use Static Memory instead of Heap Memory
+# See tensorflow/lite/kernels/internal/types.h
+CFLAGS   += -DTF_LITE_STATIC_MEMORY
+CPPFLAGS += -DTF_LITE_STATIC_MEMORY
+
 # TensorFlow Makefile
 # Based on https://github.com/lupyuen/bl_iot_sdk/blob/tflite/customer_app/sdk_app_tflite/Makefile
 
