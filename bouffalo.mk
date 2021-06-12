@@ -14,7 +14,7 @@ COMPONENT_OBJS := $(patsubst %.c,%.o, $(COMPONENT_SRCS))
 
 # Source Folders
 COMPONENT_SRCDIRS := \
-  tensorflow/lite/c/common.c \
+  tensorflow/lite/c \
 	tensorflow/lite/core/api \
 	tensorflow/lite/micro \
 	tensorflow/lite/micro/kernels
