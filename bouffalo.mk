@@ -52,6 +52,7 @@ CPPFLAGS += -DTF_LITE_STATIC_MEMORY
 # This fixes the missing symbols __cxa_guard_acquire and __cxa_guard_release.
 # Note: This assumes that we will not init C++ static variables in multiple tasks.
 # See https://alex-robenko.gitbook.io/bare_metal_cpp/compiler_output/static
+CFLAGS   += -fno-threadsafe-statics
 CPPFLAGS += -fno-threadsafe-statics
 
 # TensorFlow Makefile
