@@ -48,6 +48,12 @@ CPPFLAGS += -DTF_LITE_USE_GLOBAL_MAX
 CFLAGS   += -DTF_LITE_STATIC_MEMORY
 CPPFLAGS += -DTF_LITE_STATIC_MEMORY
 
+# Don't use Thread-Safe Initialisation for C++ Static Variables.
+# This fixes the missing symbols __cxa_guard_acquire and __cxa_guard_release.
+# Note: This assumes that we will not init C++ static variables in multiple tasks.
+# See https://alex-robenko.gitbook.io/bare_metal_cpp/compiler_output/static
+CPPFLAGS += -fno-threadsafe-statics
+
 # TensorFlow Makefile
 # Based on https://github.com/lupyuen/bl_iot_sdk/blob/tflite/customer_app/sdk_app_tflite/Makefile
 
