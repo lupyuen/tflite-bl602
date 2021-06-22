@@ -4,7 +4,11 @@
 
 # Include Folders
 # TODO: Sync with component.mk
-COMPONENT_ADD_INCLUDEDIRS := include tensorflow/.. tensorflow/lite/micro/tools/make/downloads/flatbuffers/include tensorflow/lite/micro/tools/make/downloads/gemmlowp tensorflow/lite/micro/tools/make/downloads/ruy
+COMPONENT_ADD_INCLUDEDIRS := \
+    tensorflow/.. \
+    tensorflow/lite/micro/tools/make/downloads/flatbuffers/include \
+    tensorflow/lite/micro/tools/make/downloads/gemmlowp \
+    tensorflow/lite/micro/tools/make/downloads/ruy
 
 # Object Files (*.o)
 COMPONENT_OBJS := $(patsubst %.c,%.o, $(COMPONENT_SRCS))
