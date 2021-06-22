@@ -4,7 +4,7 @@
 
 # Include Folders
 # TODO: Sync with bouffalo.mk
-COMPONENT_ADD_INCLUDEDIRS := \
+COMPONENT_ADD_INCLUDEDIRS := include \
     tensorflow/.. \
     tensorflow/lite/micro/tools/make/downloads/flatbuffers/include \
     tensorflow/lite/micro/tools/make/downloads/gemmlowp \
